@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Azure Example</title>
-</head>
-<body>
-	<h1>My first web app host on Azure</h1>
-	<p>Hello World!</p>
-	<a href=http://nba.hupu.com>Go to HoopChina</a>
-</body>
+	<head>
+		<title>Touch the Goal</title>
+		<!--Boostrap's CSS-->
+		<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<!--Custom CSS-->
+		<link rel="stylesheet" type="text/css" href="./css/style.css">	
+	</head>
+	<body>
+		<div class="container" id="page-container">
+			<h1 id="app-name">
+				<span class="glyphicon glyphicon-accounts"></span> account trackpod
+			</h1>
+
+			<h2 id="page-header">
+                Help you find the way to your goals.
+            </h2>
+			<div class="transaction">
+                <label class="btn transaction-info" for="my-transaction-amount">
+                    <input id="my-transaction-amount" type="number">
+                    How much did you spend?
+                </label>
+				<button type="button" class="btn transaction-info" id="confirmbtn">Add a spend</button>
+            </div>
+        </div>
+
+
+		<!--jQuery Script-->
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <!--Bootstrap Script-->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--Custom Script-->
+        <script src="./js/basic.js"></script>
+    </body>
 </html>
