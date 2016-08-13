@@ -1,10 +1,15 @@
+var response = function(resp){
+    for (i=0; i<resp['abilities'].length; i++){
+        console.log(resp['abilities'][i].ability.name);
+    }
+};
+
 $("#button_space").click(function() {
+    var pokeindex = $('#pokeindex').val();
     $.ajax({
-        url: 'http://api.open-notify.org/astros.json',
-        type: 'GET',
-        dataType: 'jsonp',
-        success: function(){
-            alert("h");
-        }
-    })
+    url: 'http://pokeapi.co/api/v2/pokemon/' + pokeindex,
+    type: 'GET',
+    dataType: 'json',
+    success: response    
+    });
 });
