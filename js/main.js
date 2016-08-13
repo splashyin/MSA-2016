@@ -1,4 +1,4 @@
-$("#sendrequest").click(function() {
+$("#button_space").click(function() {
     $.ajax({
         url: 'http://api.open-notify.org/astros.json',
         type: 'GET',
