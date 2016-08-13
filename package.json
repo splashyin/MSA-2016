@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/splashyin/test/issues"
   },
-  "homepage": "https://github.com/splashyin/test#readme"
+  "homepage": "https://github.com/splashyin/test#readme",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
 }
