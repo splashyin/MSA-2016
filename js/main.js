@@ -2,16 +2,9 @@ $("#button_space").click(function() {
     $.ajax({
         url: 'http://api.open-notify.org/astros.json',
         type: 'GET',
-        data: {
-            format: 'json'
-        },
-        processData: false
+        dataType: 'json',
+        success: function(){
+            alert("h");
+        }
     })
-    .done(function (data) {
-        if (data.length != 0) {
-            alert(data);
-            } else {
-                alert("Opps...");
-            }
-        })
 });
