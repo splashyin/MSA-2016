@@ -8,6 +8,10 @@ $("#sendrequest").click(function() {
         processData: false
     })
     .done(function (data) {
-        alert(data);
-    });
+        if (data.length != 0) {
+            alert(data);
+            } else {
+                alert("Opps...");
+            }
+        })
 });
