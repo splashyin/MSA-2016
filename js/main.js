@@ -1,11 +1,13 @@
-function sendAstroRequest(file, callback){
+$("#sendrequest").click(function() {
     $.ajax({
         url: "http://api.open-notify.org/astros.json",
         type: "GET",
-        data: file,
+        data: {
+            format: 'json'
+        },
         processData: false
     })
-    .done(function () {
-        alert("hehe");
+    .done(function (data) {
+        alert(data);
     });
 }
