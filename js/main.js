@@ -1,7 +1,7 @@
 $("#sendrequest").click(function() {
     $.ajax({
-        url: "http://api.open-notify.org/astros.json",
-        type: "GET",
+        url: 'http://api.open-notify.org/astros.json',
+        type: 'GET',
         data: {
             format: 'json'
         },
@@ -10,4 +10,4 @@ $("#sendrequest").click(function() {
     .done(function (data) {
         alert(data);
     });
-}
+});
