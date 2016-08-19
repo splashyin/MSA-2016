@@ -1,7 +1,9 @@
 var response = function(resp){
+    var abi_stack = [];
     for (i=0; i<resp['abilities'].length; i++){
-        console.log(resp['abilities'][i].ability.name);
+        abi_stack.push(resp['abilities'][i].ability.name + "<br>");
     }
+    $('#pokemon-ability').html(abi_stack);
 };
 
 $("#button_space").click(function() {
