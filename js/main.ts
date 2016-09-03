@@ -14,7 +14,7 @@ class Pokemon {
 
 //A function to be called when the request succeed...
 var response: any = function(resp: any){ 
-    var abi_stack: string[];
+    var abi_stack: any = [];
     var i: number; 
 
     for (i=0; i<resp['abilities'].length; i++){ 

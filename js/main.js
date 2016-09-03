@@ -9,7 +9,7 @@ var Pokemon = (function () {
 }());
 //A function to be called when the request succeed...
 var response = function (resp) {
-    var abi_stack;
+    var abi_stack = [];
     var i;
     for (i = 0; i < resp['abilities'].length; i++) {
         abi_stack.push(resp['abilities'][i].ability.name + "<br>");
