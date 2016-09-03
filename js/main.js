@@ -12,10 +12,11 @@ var response = function (resp) {
     var abi_stack = [];
     var i;
     for (i = 0; i < resp['abilities'].length; i++) {
-        abi_stack.push(resp['abilities'][i].ability.name + "<br>");
+        abi_stack.push((i + 1) + ". " + resp['abilities'][i].ability.name + "<br>");
     }
     var aPokemon = new Pokemon(resp['id'], resp['name'], resp['order'], abi_stack);
-    $('#pokemon-ability').html(aPokemon.poke_name);
+    $('#pokemon-name').html(aPokemon.poke_name);
+    $('#pokemon-ability').html(aPokemon.poke_abilities);
 };
 $("#button_space").click(function () {
     var pokeindex = $('#pokeindex').val();
