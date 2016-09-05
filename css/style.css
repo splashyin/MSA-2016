@@ -54,10 +54,3 @@ body #page-container {
     margin-bottom: 40px;
 }
 
-.btn-wrapper {
-    padding: 20px 0;
-}
-
-input#my-file-selector {
-    display:none;
-}

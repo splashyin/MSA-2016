@@ -19,7 +19,7 @@ var response = function (resp) {
     $('#pokemon-ability').html(aPokemon.poke_abilities);
 };
 $("#find_button").click(function () {
-    var pokeindex = $('#pokeindex').val();
+    var pokeindex = $('#poke-input').val();
     $.ajax({
         url: 'http://pokeapi.co/api/v2/pokemon/' + pokeindex,
         type: 'GET',

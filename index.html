@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>WikiPokemon-abilities</title>
+		<title>WikiPokemon</title>
 		<!--Boostrap's CSS-->
 		<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<!--Custom CSS-->
@@ -16,13 +16,18 @@
 			<h2 id="page-header">
                 Help you find the ablities of your Pokemom.
             </h2>
-			<div class="transaction">
-                <label class="btn transaction-info" for="my-transaction-amount">
-                    <input id="pokeindex">
-                    Type the pokemon you want here :)
-                </label>
-				<button id="find_button">Find Pokemon</button>
-            </div>
+
+			<form class="form-inline">
+				<div class="form-group">
+                	<label for="poke-input">
+                    	Type the pokemon you want here.
+                	</label>
+
+					<input class="form-control" id="poke-input">
+				</div>
+
+			<button id="find_button">Find Pokemon</button>
+    
 			<div class="pokemon-info">
 				<h2 id="pokemon-name">
 				</h2>
