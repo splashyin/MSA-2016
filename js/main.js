@@ -18,7 +18,7 @@ var response = function (resp) {
     $('#pokemon-name').html(aPokemon.poke_name);
     $('#pokemon-ability').html(aPokemon.poke_abilities);
 };
-$("#button_space").click(function () {
+$("#find_button").click(function () {
     var pokeindex = $('#pokeindex').val();
     $.ajax({
         url: 'http://pokeapi.co/api/v2/pokemon/' + pokeindex,
