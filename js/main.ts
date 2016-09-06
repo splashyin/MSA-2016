@@ -27,9 +27,10 @@ var response: any = function(resp: any){
     $('#pokemon-ability').html(aPokemon.poke_abilities); 
 }; 
 
-var err_response: any = function(error_resp: any){
-    $('#pokemon-name').html("This creature is ...");
-    $('#pokemon-ability').html(error_resp['detail']);
+//A function to be called when the request fails...
+var err_response: any = function(err_resp: any){
+    $('#pokemon-name').html("..." + err_resp.status);
+    $('#pokemon-ability').html("" + err_resp.statusText);
 }
  
 $("#find_button").click(function() { 
