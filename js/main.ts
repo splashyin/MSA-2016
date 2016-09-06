@@ -26,17 +26,23 @@ var response: any = function(resp: any){
     $('#pokemon-name').html(aPokemon.poke_name);
     $('#pokemon-ability').html(aPokemon.poke_abilities); 
 }; 
+
+var err_response: any = function(error_resp: any){
+    $('#pokemon-name').html("This creature is ...");
+    $('#pokemon-ability').html(error_resp['detail']);
+}
  
 $("#find_button").click(function() { 
      var pokeindex: any = $('#poke-input').val(); 
      if(pokeindex <= 0){
-         alert("Wrong input");
+         alert("Wrong Input! Please enter Pokemon's Name or Index.");
      }
      $.ajax({ 
      url: 'http://pokeapi.co/api/v2/pokemon/' + pokeindex, 
      type: 'GET', 
      dataType: 'json', 
-     success: response //success(result, status, xhr) a function to be run when the request succeeds...    
+     success: response, //success(result, status, xhr) a function to be run when the request succeeds...  
+     error: err_response 
      });
 }); 
 
