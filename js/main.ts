@@ -29,7 +29,7 @@ var response: any = function(resp: any){
 
 //A function to be called when the request fails...
 var err_response: any = function(err_resp: any){
-    $('#pokemon-name').html("..." + err_resp.status);
+    $('#pokemon-name').html("This pokemon is ...");
     $('#pokemon-ability').html("" + err_resp.statusText);
 }
  
