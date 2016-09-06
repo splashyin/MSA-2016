@@ -20,7 +20,7 @@ var response = function (resp) {
 };
 //A function to be called when the request fails...
 var err_response = function (err_resp) {
-    $('#pokemon-name').html("..." + err_resp.status);
+    $('#pokemon-name').html("This pokemon is ...");
     $('#pokemon-ability').html("" + err_resp.statusText);
 };
 $("#find_button").click(function () {
