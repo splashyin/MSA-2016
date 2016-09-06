@@ -20,6 +20,9 @@ var response = function (resp) {
 };
 $("#find_button").click(function () {
     var pokeindex = $('#poke-input').val();
+    if (pokeindex <= 0) {
+        alert("Wrong input");
+    }
     $.ajax({
         url: 'http://pokeapi.co/api/v2/pokemon/' + pokeindex,
         type: 'GET',

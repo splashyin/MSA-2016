@@ -48,6 +48,11 @@ h2#page-header {
     padding-bottom:20px;
 }
 
+p#pokemon-ability {
+    font-size: 20px;
+    padding-bottom:20px;
+}
+
 body #page-container {
     margin-top: 150px;
     text-align: center;

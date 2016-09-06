@@ -28,7 +28,10 @@ var response: any = function(resp: any){
 }; 
  
 $("#find_button").click(function() { 
-     var pokeindex: number = $('#poke-input').val(); 
+     var pokeindex: any = $('#poke-input').val(); 
+     if(pokeindex <= 0){
+         alert("Wrong input");
+     }
      $.ajax({ 
      url: 'http://pokeapi.co/api/v2/pokemon/' + pokeindex, 
      type: 'GET', 
