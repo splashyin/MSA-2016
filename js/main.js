@@ -44,7 +44,7 @@ function response(resp) {
         }
     }
     //Construct a new Pokemon!
-    var aPokemon = new Pokemon(resp['id'], resp['name'], resp['order'], abi_stack, pokemon_attack, pokemon_hp, pokemon_specialattack);
+    var aPokemon = new Pokemon(resp['id'], resp['name'], resp['order'], abi_stack, pokemon_attack, pokemon_specialattack, pokemon_hp);
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
     $('#pokemon-hp').html("" + aPokemon.poke_hp);

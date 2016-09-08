@@ -68,8 +68,9 @@ function response(resp: any): void{
         resp['order'],
         abi_stack,
         pokemon_attack,
-        pokemon_hp,
-        pokemon_specialattack);
+        pokemon_specialattack,
+        pokemon_hp
+        );
 
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
