@@ -4,14 +4,14 @@ $(document).ready(function () {
 });
 //Pokemon class, to construct an pokemon object
 var Pokemon = (function () {
-    function Pokemon(id, name, order, abilities, attack, specialattck, hp) {
+    function Pokemon(id, name, order, abilities, attack, specialattack, hp) {
         this.poke_id = id;
         this.poke_name = name;
         this.poke_order = order;
         this.poke_abilities = abilities;
         this.poke_attack = attack;
         this.poke_hp = hp;
-        this.poke_specialattack = specialattck;
+        this.poke_specialattack = specialattack;
     }
     return Pokemon;
 }());
@@ -48,8 +48,8 @@ function response(resp) {
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
     $('#pokemon-hp').html("" + aPokemon.poke_hp);
-    //$('#pokemon-attack').html(""+ aPokemon.poke_attack);
-    //$('#pokemon-specialattck').html(""+ aPokemon.poke_specialattack);
+    $('#pokemon-attack').html("" + aPokemon.poke_attack);
+    $('#pokemon-special-attack').html("" + aPokemon.poke_specialattack);
     var image_url = resp['sprites'].front_default;
     $("#poke_image").show();
     $("#poke_image").attr("src", image_url);
