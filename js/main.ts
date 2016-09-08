@@ -18,7 +18,7 @@ class Pokemon {
                  order: number, 
                  abilities: any,
                  attack: number,
-                 specialattck: number,
+                 specialattack: number,
                  hp: number){
          this.poke_id = id;
          this.poke_name = name;
@@ -26,7 +26,7 @@ class Pokemon {
          this.poke_abilities = abilities;
          this.poke_attack = attack;
          this.poke_hp = hp;
-         this.poke_specialattack = specialattck;
+         this.poke_specialattack = specialattack;
      }      
 }
 
