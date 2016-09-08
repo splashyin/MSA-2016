@@ -1,6 +1,7 @@
 //Clear the image when everytime website is loaded or refresed
 $(document).ready(function(){
     $("img").hide();
+    $("table").hide();
 });
 
 //Pokemon class, to construct an pokemon object
@@ -30,23 +31,42 @@ class Pokemon {
      }      
 }
 
+function replaceAt(aString: string, index: number, character: string): string{
+    return aString.substr(0, index) + character + aString.substr(index+character.length);
+}
+
 //A function to be called when the request succeed...
 function response(resp: any): void{
+    //local variables...
     var abi_stack: any = [];
     var i: number;
     var j: number; 
+    var a: number;
     var ablitemp: string;
     var theAbli: string;
     var pokemon_attack: number;
     var pokemon_specialattack: number;
     var pokemon_hp: number;
+    var aNew_ability : string;
+    var updated: boolean;
 
-    //get abilities...
+    //get abilities...'process' the string to readable sentence...
     for (i=0; i<resp['abilities'].length; i++){ 
         ablitemp = resp['abilities'][i].ability.name;
         theAbli = ablitemp[0].toUpperCase() + ablitemp.slice(1);
-
-        abi_stack.push((i+1) + ". " + theAbli + "<br>"); 
+        updated =false;
+        for(a=0; a<theAbli.length; a++){
+            if(theAbli[a] == "-"){
+                aNew_ability = replaceAt(theAbli, a, " ");
+                updated = true;
+            }
+        }
+        if (updated == true){
+            abi_stack.push(aNew_ability + "<br>");
+        }
+        else{
+            abi_stack.push(theAbli + "<br>");
+        } 
     } 
     //get the stat of attack, special-attack and hp...
     for(j=0; j<resp['stats'].length; j++){
@@ -71,7 +91,9 @@ function response(resp: any): void{
         pokemon_specialattack,
         pokemon_hp
         );
+    
 
+    $("table").show();
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
     $('#pokemon-hp').html(""+ aPokemon.poke_hp);

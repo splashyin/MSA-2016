@@ -1,6 +1,7 @@
 //Clear the image when everytime website is loaded or refresed
 $(document).ready(function () {
     $("img").hide();
+    $("table").hide();
 });
 //Pokemon class, to construct an pokemon object
 var Pokemon = (function () {
@@ -15,21 +16,40 @@ var Pokemon = (function () {
     }
     return Pokemon;
 }());
+function replaceAt(aString, index, character) {
+    return aString.substr(0, index) + character + aString.substr(index + character.length);
+}
 //A function to be called when the request succeed...
 function response(resp) {
+    //local variables...
     var abi_stack = [];
     var i;
     var j;
+    var a;
     var ablitemp;
     var theAbli;
     var pokemon_attack;
     var pokemon_specialattack;
     var pokemon_hp;
-    //get abilities...
+    var aNew_ability;
+    var updated;
+    //get abilities...'process' the string to readable sentence...
     for (i = 0; i < resp['abilities'].length; i++) {
         ablitemp = resp['abilities'][i].ability.name;
         theAbli = ablitemp[0].toUpperCase() + ablitemp.slice(1);
-        abi_stack.push((i + 1) + ". " + theAbli + "<br>");
+        updated = false;
+        for (a = 0; a < theAbli.length; a++) {
+            if (theAbli[a] == "-") {
+                aNew_ability = replaceAt(theAbli, a, " ");
+                updated = true;
+            }
+        }
+        if (updated == true) {
+            abi_stack.push(aNew_ability + "<br>");
+        }
+        else {
+            abi_stack.push(theAbli + "<br>");
+        }
     }
     //get the stat of attack, special-attack and hp...
     for (j = 0; j < resp['stats'].length; j++) {
@@ -45,6 +65,7 @@ function response(resp) {
     }
     //Construct a new Pokemon!
     var aPokemon = new Pokemon(resp['id'], resp['name'], resp['order'], abi_stack, pokemon_attack, pokemon_specialattack, pokemon_hp);
+    $("table").show();
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
     $('#pokemon-hp').html("" + aPokemon.poke_hp);

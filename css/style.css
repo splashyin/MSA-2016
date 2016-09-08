@@ -59,3 +59,6 @@ body #page-container {
     margin-bottom: 40px;
 }
 
+.table > tbody > tr > td.vert-align {
+    vertical-align: middle;
+}
