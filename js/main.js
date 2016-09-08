@@ -1,3 +1,8 @@
+//hide the image when everytime website is loaded
+$(document).ready(function () {
+    $("img").hide();
+});
+//Pokemon class, to construct an pokemon object
 var Pokemon = (function () {
     function Pokemon(id, name, order, abilities) {
         this.poke_id = id;
@@ -8,7 +13,7 @@ var Pokemon = (function () {
     return Pokemon;
 }());
 //A function to be called when the request succeed...
-var response = function (resp) {
+function response(resp) {
     var abi_stack = [];
     var i;
     var ablitemp;
@@ -24,14 +29,15 @@ var response = function (resp) {
     var image_url = resp['sprites'].front_default;
     $("#poke_image").show();
     $("#poke_image").attr("src", image_url);
-};
+}
 //A function to be called when the request fails...
-var err_response = function (err_resp) {
+function err_response(err_resp) {
     alert("Wrong Input! Please enter Pokemon's Name or Index.");
     $('#pokemon-name').html("This pokemon is ...");
     $('#pokemon-ability').html("" + err_resp.statusText);
     $("#poke_image").hide();
-};
+}
+//Button listener..
 $("#find_button").click(function () {
     var pokeindex = $('#poke-input').val();
     if (typeof pokeindex == "string") {
@@ -42,6 +48,6 @@ $("#find_button").click(function () {
         type: 'GET',
         dataType: 'json',
         success: response,
-        error: err_response
+        error: err_response //failure...
     });
 });
