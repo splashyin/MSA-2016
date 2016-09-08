@@ -31,7 +31,7 @@ var response: any = function(resp: any){
     $('#pokemon-ability').html(aPokemon.poke_abilities);
 
     var image_url: string = resp['sprites'].front_default;
-    
+    $("#poke_image").show();
     $("#poke_image").attr("src", image_url);
     
 
@@ -42,6 +42,7 @@ var err_response: any = function(err_resp: any){
     alert("Wrong Input! Please enter Pokemon's Name or Index.");
     $('#pokemon-name').html("This pokemon is ...");
     $('#pokemon-ability').html("" + err_resp.statusText);
+    $("#poke_image").hide();
 }
  
 $("#find_button").click(function() { 

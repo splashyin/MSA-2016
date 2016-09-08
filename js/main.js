@@ -22,6 +22,7 @@ var response = function (resp) {
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
     var image_url = resp['sprites'].front_default;
+    $("#poke_image").show();
     $("#poke_image").attr("src", image_url);
 };
 //A function to be called when the request fails...
@@ -29,6 +30,7 @@ var err_response = function (err_resp) {
     alert("Wrong Input! Please enter Pokemon's Name or Index.");
     $('#pokemon-name').html("This pokemon is ...");
     $('#pokemon-ability').html("" + err_resp.statusText);
+    $("#poke_image").hide();
 };
 $("#find_button").click(function () {
     var pokeindex = $('#poke-input').val();
