@@ -109,10 +109,15 @@ function response(resp: any): void{
 //A function to be called when the request fails...
 function err_response(err_resp: any): void{
     alert("Wrong Input! Please enter Pokemon's Name or Index.");
+    $("table").show();
     $('#pokemon-name').html("This pokemon is ...");
     $('#pokemon-ability').html("" + err_resp.statusText);
+    $('#pokemon-hp').html("-");
+    $('#pokemon-attack').html("-");
+    $('#pokemon-special-attack').html("-");
     $("#poke_image").hide();
 }
+
 //Button listener..
 $("#find_button").click(function() { 
      var pokeindex: any = $('#poke-input').val(); 
