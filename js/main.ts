@@ -28,7 +28,13 @@ var response: any = function(resp: any){
 
     var aPokemon: Pokemon = new Pokemon(resp['id'], resp['name'], resp['order'], abi_stack);
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
-    $('#pokemon-ability').html(aPokemon.poke_abilities); 
+    $('#pokemon-ability').html(aPokemon.poke_abilities);
+
+    var image_url: string = resp['sprites'].front_default;
+    
+    $("#poke_image").attr("src", image_url);
+    
+
 }; 
 
 //A function to be called when the request fails...
