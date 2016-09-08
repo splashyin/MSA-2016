@@ -75,8 +75,8 @@ function response(resp: any): void{
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
     $('#pokemon-hp').html(""+ aPokemon.poke_hp);
-    //$('#pokemon-attack').html(""+ aPokemon.poke_attack);
-    //$('#pokemon-specialattck').html(""+ aPokemon.poke_specialattack);
+    $('#pokemon-attack').html(""+ aPokemon.poke_attack);
+    $('#pokemon-specialattck').html(""+ aPokemon.poke_specialattack);
 
     var image_url: string = resp['sprites'].front_default;
     $("#poke_image").show();
