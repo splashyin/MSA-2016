@@ -1,8 +1,3 @@
-//Clear the image when everytime website is loaded or refresed
-$(document).ready(function () {
-    $("img").hide();
-    $("table").hide();
-});
 //Pokemon class, to construct an pokemon object
 var Pokemon = (function () {
     function Pokemon(id, name, order, abilities, attack, specialattack, hp) {
@@ -19,12 +14,23 @@ var Pokemon = (function () {
 function replaceAt(aString, index, character) {
     return aString.substr(0, index) + character + aString.substr(index + character.length);
 }
+//A function to load FAcebook SDK for Javascript
+function get_fb(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id))
+        return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+}
 //A function to be called when the request succeed...
 function response(resp) {
     //local variables...
     var abi_stack = [];
     var i;
     var j;
+    var k;
     var a;
     var ablitemp;
     var theAbli;
@@ -99,4 +105,10 @@ $("#find_button").click(function () {
         success: response,
         error: err_response //failure...
     });
+});
+//Clear the image when everytime website is loaded or refresed
+$(document).ready(function () {
+    $("img").hide();
+    $("table").hide();
+    get_fb(document, 'script', 'facebook-jssdk');
 });

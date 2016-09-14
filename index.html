@@ -8,6 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="./css/style.css">	
 	</head>
 	<body>
+		<!-- Load Facebook SDK for Javascript -->
+		<div id="fb-root"></div>
+		<!-- Page Container -->
 		<div class="container" id="page-container">
 			<h1 id="app-name">
 				<span class="glyphicon glyphicon-pokemon"></span> Let's see what your Pokemons can do
@@ -55,7 +58,20 @@
 						</tbody>
 					</table>
 				</div>
+				<!-- Share button code -->
+				<div class="fb-share-button" 
+					 data-href="http://tempsplashapp.azurewebsites.net/" 
+					 data-layout="button" 
+					 data-size="large" 
+					 data-mobile-iframe="true">
+					 <a class="fb-xfbml-parse-ignore" 
+					 	target="_blank" 
+						href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftempsplashapp.azurewebsites.net%2F&amp;src=sdkpreparse">
+						Share
+					</a>
+				</div>
 
+				
 			</div>
         </div>
 
@@ -66,5 +82,6 @@
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <!--Custom Script-->
         <script src="./js/main.js"></script>
+		
     </body>
 </html>

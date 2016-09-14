@@ -62,3 +62,8 @@ body #page-container {
 .table > tbody > tr > td.vert-align {
     vertical-align: middle;
 }
+
+.fb-share-button {
+    float: right;
+    margin: 0 0 10px 10px;
+}

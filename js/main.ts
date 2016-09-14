@@ -1,9 +1,3 @@
-//Clear the image when everytime website is loaded or refresed
-$(document).ready(function(){
-    $("img").hide();
-    $("table").hide();
-});
-
 //Pokemon class, to construct an pokemon object
 class Pokemon {
      poke_id: number;
@@ -35,12 +29,22 @@ function replaceAt(aString: string, index: number, character: string): string{
     return aString.substr(0, index) + character + aString.substr(index+character.length);
 }
 
+//A function to load FAcebook SDK for Javascript
+function get_fb(d: any, s: string, id: string): void{
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}
+
 //A function to be called when the request succeed...
 function response(resp: any): void{
     //local variables...
     var abi_stack: any = [];
     var i: number;
     var j: number; 
+    var k: number;
     var a: number;
     var ablitemp: string;
     var theAbli: string;
@@ -68,6 +72,7 @@ function response(resp: any): void{
             abi_stack.push(theAbli + "<br>");
         } 
     } 
+
     //get the stat of attack, special-attack and hp...
     for(j=0; j<resp['stats'].length; j++){
         if(resp['stats'][j].stat.name == "attack"){
@@ -81,6 +86,7 @@ function response(resp: any): void{
         }
     }
 
+    
 //Construct a new Pokemon!
     var aPokemon: Pokemon = new Pokemon(
         resp['id'],
@@ -92,7 +98,7 @@ function response(resp: any): void{
         pokemon_hp
         );
     
-
+    
     $("table").show();
     $('#pokemon-name').html(aPokemon.poke_name.toUpperCase());
     $('#pokemon-ability').html(aPokemon.poke_abilities);
@@ -133,3 +139,9 @@ $("#find_button").click(function() {
      });
 }); 
 
+//Clear the image when everytime website is loaded or refresed
+$(document).ready(function(){
+    $("img").hide();
+    $("table").hide();
+    get_fb(document, 'script', 'facebook-jssdk');
+});
