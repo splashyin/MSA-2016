@@ -1,3 +1,6 @@
+"use strict";
+var appInsights = require("applicationinsights");
+appInsights.setup("<a5106a31-41bd-4144-8a83-644de01a9d95>");
 //Pokemon class, to construct an pokemon object
 var Pokemon = (function () {
     function Pokemon(id, name, order, abilities, attack, specialattack, hp) {
