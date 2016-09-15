@@ -30,14 +30,6 @@ function replaceAt(aString: string, index: number, character: string): string{
     return aString.substr(0, index) + character + aString.substr(index+character.length);
 }
 
-//A function to load FAcebook SDK for Javascript
-function get_fb(d: any, s: string, id: string): void{
-  var js: any, fjs: any = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-  fjs.parentNode.insertBefore(js, fjs);
-}
 
 //A function to be called when the request succeed...
 function response(resp: any): void{
@@ -144,5 +136,4 @@ $("#find_button").click(function() {
 $(document).ready(function(){
     $("img").hide();
     $("table").hide();
-    //get_fb(document, 'script', 'facebook-jssdk');
 });

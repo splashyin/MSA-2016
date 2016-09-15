@@ -14,16 +14,6 @@ var Pokemon = (function () {
 function replaceAt(aString, index, character) {
     return aString.substr(0, index) + character + aString.substr(index + character.length);
 }
-//A function to load FAcebook SDK for Javascript
-function get_fb(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id))
-        return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-    fjs.parentNode.insertBefore(js, fjs);
-}
 //A function to be called when the request succeed...
 function response(resp) {
     //local variables...
@@ -110,5 +100,4 @@ $("#find_button").click(function () {
 $(document).ready(function () {
     $("img").hide();
     $("table").hide();
-    //get_fb(document, 'script', 'facebook-jssdk');
 });
