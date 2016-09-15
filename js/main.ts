@@ -144,5 +144,5 @@ $("#find_button").click(function() {
 $(document).ready(function(){
     $("img").hide();
     $("table").hide();
-    get_fb(document, 'script', 'facebook-jssdk');
+    //get_fb(document, 'script', 'facebook-jssdk');
 });
